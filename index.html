@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            position: relative;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container img {
+            width: 337px;
+            height: auto;
+            transform: scale(0.3);
+            transform-origin: center center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2.399);
+            transition: transform 0s;
+        }
+
+        .ruffle-embed {
+            position: absolute;
+            top: -163px;
+            left: 333px;
+            background-color: transparent;
+            border: none;
+            transform: rotate(90deg);
+            transform-origin: top left;
+            transition: transform 0s;
+        }
+
+        button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger {
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            width: 30px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            width: 100%;
+            height: 5px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 90px;
+            left: 10px;
+            width: 200px;
+            height: 300px;
+            overflow-y: auto;
+            background-color: #444;
+            border: 1px solid #555;
+            padding: 10px;
+            z-index: 999;
+        }
+
+        .menu h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: white;
+            border-bottom: 1px solid #555;
+            padding-bottom: 5px;
+        }
+
+        .menu ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu li img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border: 2px solid #666;
+            background-color: #555;
+        }
+
+        .menu li span {
+            font-size: 14px;
+            color: white;
+        }
+
+        .menu .separator {
+            border-top: 1px solid #666;
+            margin: 10px 0;
+        }
+
+        .dialog-box {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: #222;
+            padding: 20px;
+            border: 1px solid #555;
+            z-index: 1000;
+        }
+
+        .dialog-box p {
+            margin: 0;
+            font-size: 14px;
+            color: white;
+        }
+
+        .dialog-box a {
+            color: #00f;
+            text-decoration: underline;
+        }
+
+        .dialog-box button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            /* Position button in the bottom-right corner */
+            padding: 5px 10px;
+            font-size: 12px;
+            /* Smaller font size */
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="toggleOrientation">Toggle Orientation</button>
+
+    <div class="hamburger" id="hamburgerIcon">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="menu" id="menu">
+        <h3>Batman</h3>
+        <ul>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Batman/Game1.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Batman/Game1.bmp" alt="Game1"><span>Game1</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Batman/Game2.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Batman/Game2.bmp" alt="Game2"><span>Game2</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Batman/Game3.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Batman/Game3.bmp" alt="Game3"><span>Game3</span></li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <h3>Cars 2</h3>
+        <ul>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Cars2/Game1.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Cars2/Game1.bmp" alt="Game1"><span>Game1</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Cars2/Game2.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Cars2/Game2.bmp" alt="Game2"><span>Game2</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Cars2/Game3.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Cars2/Game3.bmp" alt="Game3"><span>Game3</span></li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <h3>Imaginext Dinosaurs</h3>
+        <ul>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dinosaurs/Game1.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Dinosaurs/Game1.bmp" alt="Game1"><span>Game1</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dinosaurs/Game2.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Dinosaurs/Game2.bmp" alt="Game2"><span>Game2</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dinosaurs/Game3.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Dinosaurs/Game3.bmp" alt="Game3"><span>Game3</span></li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <h3>Disney Princess</h3>
+        <ul>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/DisneyPrincess/Game1.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/DisneyPrincess/Game1.bmp" alt="Game1"><span>Game1</span>
+            </li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/DisneyPrincess/Game2.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/DisneyPrincess/Game2.bmp" alt="Game2"><span>Game2</span>
+            </li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/DisneyPrincess/Game3.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/DisneyPrincess/Game3.bmp" alt="Game3"><span>Game3</span>
+            </li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <h3>Dora</h3>
+        <ul>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game1.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game1.bmp" alt="Game1"><span>Game1</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game2.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game2.bmp" alt="Game2"><span>Game2</span></li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <h3>SpongeBob</h3>
+        <ul>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game1.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game1.bmp" alt="Game1"><span>Game1</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game2.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game2.bmp" alt="Game2"><span>Game2</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game3.swf"><img
+                    src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game3.bmp" alt="Game3"><span>Game3</span></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <img src="iXL.webp" alt="iXL Image">
+        <div id="rufflePlayer" class="ruffle-embed">
+            <!-- Ruffle Player will be dynamically created and appended here -->
+        </div>
+    </div>
+
+    <!-- Include Ruffle Player Script -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", () => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("rufflePlayer");
+
+            container.appendChild(player);
+
+            player.style.width = "320px";
+            player.style.height = "240px";
+
+            const originalPosition = { top: '-163px', left: '333px' };
+            const rotatedPosition = { top: '-333px', left: '-160px' };
+            const originalRotation = 'rotate(90deg)';
+            const rotatedRotation = 'rotate(0deg)';
+            const rotatedImageTransform = 'translate(-50%, -50%) scale(2.399) rotate(-90deg)';
+            const originalImageTransform = 'translate(-50%, -50%) scale(2.399) rotate(0deg)';
+
+            let isRotated = false;
+
+            document.getElementById('toggleOrientation').addEventListener('click', () => {
+                if (isRotated) {
+                    document.querySelector('#rufflePlayer').style.top = originalPosition.top;
+                    document.querySelector('#rufflePlayer').style.left = originalPosition.left;
+                    document.querySelector('#rufflePlayer').style.transform = originalRotation;
+                    document.querySelector('.container img').style.transform = originalImageTransform;
+                } else {
+                    document.querySelector('#rufflePlayer').style.top = rotatedPosition.top;
+                    document.querySelector('#rufflePlayer').style.left = rotatedPosition.left;
+                    document.querySelector('#rufflePlayer').style.transform = rotatedRotation;
+                    document.querySelector('.container img').style.transform = rotatedImageTransform;
+                }
+                isRotated = !isRotated;
+            });
+
+            document.querySelectorAll('.menu li').forEach(item => {
+                item.addEventListener('click', () => {
+                    const swfURL = item.getAttribute('data-swf');
+                    if (item.classList.contains('dora-error')) {
+                        document.getElementById('dialogBox').style.display = 'block';
+                    } else {
+                        player.load(swfURL);
+                    }
+                });
+            });
+
+            document.getElementById('closeDialog').addEventListener('click', () => {
+                document.getElementById('dialogBox').style.display = 'none';
+            });
+
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
+            const menu = document.getElementById('menu');
+
+            hamburgerIcon.addEventListener('click', () => {
+                if (menu.style.display === 'none' || menu.style.display === '') {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
