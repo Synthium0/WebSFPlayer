@@ -159,11 +159,9 @@
         .dialog-box button {
             position: absolute;
             bottom: 10px;
-            right: 10px;
-            /* Position button in the bottom-right corner */
+            right: 10px; /* Position button in the bottom-right corner */
             padding: 5px 10px;
-            font-size: 12px;
-            /* Smaller font size */
+            font-size: 12px; /* Smaller font size */
             background-color: #555;
             color: white;
             border: none;
@@ -235,22 +233,17 @@
 
         <h3>Dora</h3>
         <ul>
-            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game1.swf"><img
-                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game1.bmp" alt="Game1"><span>Game1</span></li>
-            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game2.swf"><img
-                    src="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game2.bmp" alt="Game2"><span>Game2</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game1.swf"><img src="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game1.bmp" alt="Game1"><span>Game1</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game2.swf"><img src="https://file.garden/ZtNefrPCZ1cAh6O1/Dora/Game2.bmp" alt="Game2"><span>Game2</span></li>
         </ul>
 
         <div class="separator"></div>
 
         <h3>SpongeBob</h3>
         <ul>
-            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game1.swf"><img
-                    src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game1.bmp" alt="Game1"><span>Game1</span></li>
-            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game2.swf"><img
-                    src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game2.bmp" alt="Game2"><span>Game2</span></li>
-            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game3.swf"><img
-                    src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game3.bmp" alt="Game3"><span>Game3</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game1.swf"><img src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game1.bmp" alt="Game1"><span>Game1</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game2.swf"><img src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game2.bmp" alt="Game2"><span>Game2</span></li>
+            <li data-swf="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game3.swf"><img src="https://file.garden/ZtNefrPCZ1cAh6O1/SpongeBob/Game3.bmp" alt="Game3"><span>Game3</span></li>
         </ul>
     </div>
 
@@ -259,6 +252,11 @@
         <div id="rufflePlayer" class="ruffle-embed">
             <!-- Ruffle Player will be dynamically created and appended here -->
         </div>
+    </div>
+
+    <div class="dialog-box" id="dialogBox">
+        <p id="dialogText">Unfortunately, due to limitations with loading external SWF files in Ruffle.js, this game cannot be played. However, it can be played with <a href="https://github.com/Synthium0/SFPlayer" target="_blank">SFPlayer</a>.</p>
+        <button id="closeDialog">Close</button>
     </div>
 
     <!-- Include Ruffle Player Script -->
